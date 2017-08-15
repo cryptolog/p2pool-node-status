@@ -368,10 +368,11 @@
 
       $('#share_difficulty')
         .text(parseFloat(global_stats.min_difficulty).toFixed(2));
-        
+
       block_diff = global_stats.network_block_difficulty;
       if (typeof block_diff !== 'undefined') {
-        block_diff = block_diff.toFixed(3) + ' (' + formatInt(block_diff*65536) + ')';
+        block_diff = block_diff.toFixed(3) ;
+        // + ' (' + formatInt(block_diff*65536) + ')';
       } else {
         block_diff = 'n/a';
       }
@@ -511,6 +512,7 @@
 
         $.getJSON(api_url + '/web/currency_info', function(data) {
           currency_info= data;
+          currency_info.address_explorer_url_prefix = "https://bitinfocharts.com/litecoin/address/"
           $(document).trigger('update_currency');
 
           $.getJSON(api_url + '/local_stats', function(data) {
