@@ -368,7 +368,14 @@
 
       $('#share_difficulty')
         .text(parseFloat(global_stats.min_difficulty).toFixed(2));
-
+        
+      block_diff = global_stats.network_block_difficulty;
+      if (typeof block_diff !== 'undefined') {
+        block_diff = block_diff.toFixed(3) + ' (' + formatInt(block_diff*65536) + ')';
+      } else {
+        block_diff = 'n/a';
+      }
+      $('#block_difficulty').text(block_diff);
       $('#block_value')
         .text(parseFloat(local_stats.block_value).toFixed(8))
         .append(' ').append(currency.clone());
