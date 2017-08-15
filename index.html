@@ -64,7 +64,7 @@
 
     <div class="container">
       <div class="page-header">
-        <h1>p2pool <span id='currency'></span> &dash; node dashboard</h1>
+        <h1>p2pool <span id='currency'></span> &dash; node dashboard (SegWit) </h1>
         <b>
           <small>
             <span id='_node' class='hidden'>Node: </span>
@@ -94,56 +94,58 @@
       <div id='chart'></div>
 
       <h4>Status</h4>
-      <table id='status' class="table table-hover" border='0'>
-        <tr>
-          <td width='19%'>Local rate:</td>
-          <td width='31%' class='text-right'><span id='local_rate'></span></td>
-          <td width='19%'>Shares:</td>
-          <td width='31%' class='text-right'><span id='shares'></span></td>
+        <table id="status" class="table table-hover" border="0">
+        <tbody><tr>
+          <td width="25%">Local rate:</td>
+          <td width="25%" class="text-right"><span id="local_rate"></span></td>
+          <td width="25%">Shares:</td>
+          <td width="25%" class="text-right"><span id="shares"></span></td>
         </tr>
         <tr>
-          <td width='19%'>Global pool rate:</td>
-          <td width='31%' class='text-right'><span id='global_rate'></span></td>
-          <td width='19%'>Share difficulty:</td>
-          <td width='31%' class='text-right'><span id='share_difficulty'></span></td>
+          <td width="25%">Global pool rate:</td>
+          <td width="25%" class="text-right"><span id="global_rate"></span></td>
+          <td width="25%">Share difficulty (pool minimum):</td>
+          <td width="25%" class="text-right"><span id="share_difficulty"></span></td>
         </tr>
         <tr>
-          <td width='19%'>Current block value:</td>
-          <td width='31%' class='text-right'><span id='block_value'></span></td>
-          <td width='19%'>Expected time to share:</td>
-          <td width='31%' class='text-right'><span id='expected_time_to_share'></span></td>
+          <td width="25%"><span class="currency"><span></span></span> network hashrate (estimate):</td>
+          <td width="25%" class="text-right"><span id="network_rate"></span></td>
+          <td width="25%">Network block difficulty:</td>
+          <td width="25%" class="text-right"><span id="block_difficulty"></span></td>
         </tr>
         <tr>
-          <td width='19%'>Payout if a block were found NOW:</td>
-          <td width='31%' class='text-right'><span id='payout_now'></span></td>
-          <td width='19%'>Expected time to block:</td>
-          <td width='31%' class='text-right'><span id='expected_time_to_block'></span></td>
+          <td width="25%">Current block value:</td>
+          <td width="25%" class="text-right"><span id="block_value"><span>LTC</span></span></td>
+          <td width="25%">Expected time to share (this node):</td>
+          <td width="25%" class="text-right"><span id="expected_time_to_share"></span></td>
         </tr>
         <tr>
-          <td width='19%'>Node peers:</td>
-          <td width='31%' class='text-right'>
-            <i class='fa fa-sign-in fa-fw'></i>
-            <span id='peers_in'></span>
+        <!--  <td width='25%'>Payout if a block were found NOW:</td>
+          <td width='25%' class='text-right'><span id='payout_now'></span></td>-->
+          <td width="25%">Node peers:</td>
+          <td width="25%" class="text-right">
+            <i class="fa fa-sign-in fa-fw"></i>
+            <span id="peers_in"></span>
             /
-            <i class='fa fa-sign-out fa-fw'></i>
-            <span id='peers_out'></span>
+            <i class="fa fa-sign-out fa-fw"></i>
+            <span id="peers_out"></span>
           </td>
-          <td width='19%'>Node uptime:</td>
-          <td width='31%' class='text-right'><span id='node_uptime'></span></td>
+          <td width="25%">Expected time to block (pool):</td>
+          <td width="25%" class="text-right"><span id="expected_time_to_block"></span></td>
         </tr>
         <tr>
-          <td width='19%'>Node p2pool version:</td>
-          <td width='31%' class='text-right'><span id='p2pool_version'></span></td>
-          <td width='19%'>Protocol version:</td>
-          <td width='31%' class='text-right'><span id='protocol_version'></span></td>
+          <td width="25%">Node fee / donation:</td>
+          <td width="25%" class="text-right"><span id="node_fee"></span> / <span id="node_donation"></span></td>
+          <td width="25%">Node uptime:</td>
+          <td width="25%" class="text-right"><span id="node_uptime"></span></td>
         </tr>
         <tr>
-          <td width='19%'>Node fee:</td>
-          <td width='31%' class='text-right'><span id='node_fee'></span></td>
-          <td width='19%'>Node donation:</td>
-          <td width='31%' class='text-right'><span id='node_donation'></span></td>
+          <td width="25%">Node p2pool version:</td>
+          <td width="25%" class="text-right"><span id="p2pool_version"></span></td>
+          <td width="25%">Protocol version:</td>
+          <td width="25%" class="text-right"><span id="protocol_version"></span></td>
         </tr>
-      </table>
+      </tbody></table>
 
       <h4>Active miners on this node</h4>
       <table id='active_miners' class="table table-hover">
@@ -183,13 +185,12 @@
       <div class='container'>
         <hr>
         <p class='text-center'>
-          Interface by johndoe75
-          &dash;
-          <a href="https://github.com/johndoe75/p2pool-node-status.git">https://github.com/johndoe75/p2pool-node-status.git</a>
+          p2pool is based on https://github.com/ilsawa/p2pool-ltc
+          
         </p>
         <p class='text-center'>
-          Donate some coins, if you like it <code>1MzFr1eKzLEC1tuoZ7URMB7WWBMgHKimKe</code>
-          (<i class='fa fa-btc'></i>) or <code>LSRfZJf75MtwzrbAUfQgqzdK4hHpY4oMW3</code> (LTC)
+          Donate some coins, if you like it <code>LW8h6RrfkiFd9RXDGAS9qA44c2TbtANdzp</code>
+        
         </p>
       </div>
     </div>
@@ -351,6 +352,8 @@
         + ' / ' + ((global_doa_rate / pool_hash_rate) * 100).toFixed(2)
         + '%)';
       $('#global_rate').text(global_rate);
+
+       $('#network_rate').text(formatHashrate(global_stats.network_hashrate));
 
       $('#share_difficulty')
         .text(parseFloat(global_stats.min_difficulty).toFixed(2));
