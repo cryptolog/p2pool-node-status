@@ -30,3 +30,11 @@ String.prototype.formatSeconds = function () {
 }
 
 // ======================================================================
+var formatInt= function(rate) {
+  rate= parseFloat(rate); unit= '';
+  if(rate >= 1000) { rate /= 1000; unit= ' K'; }
+  if(rate >= 1000) { rate /= 1000; unit= ' M'; }
+  if(rate >= 1000) { rate /= 1000; unit= ' G'; }
+  if(rate >= 1000) { rate /= 1000; unit= ' T'; }
+  return ((unit=='' ? rate.toFixed(0) : rate.toFixed(2)) + unit);
+}
