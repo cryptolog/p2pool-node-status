@@ -54,13 +54,7 @@
   </head>
 
   <body>
-    <div id='ribbon' style='display:none;'>
-      <a href="https://github.com/johndoe75/p2pool-node-status">
-        <img style="position: absolute; top: 0; right: 0; border: 0;" src="img/forkme_right_orange_ff7600.png" alt="Fork me on GitHub">
-      </a>
-    </div>
-
-    <div id="navbar"></div>
+        <div id="navbar"></div>
 
     <div class="container">
       <div class="page-header">
@@ -76,11 +70,7 @@
 
       <div id='node_alerts' class="alert alert-danger hidden"></div>
 
-      <!-- We should have a possiblity showing other miners on our node what
-           happened or if we have other things to tell them. -->
-      <div class="alert alert-info hidden">
-        <p><b>2013-12-13: This is a message to miners on my node telling them something really cool.</b></p>
-      </div>
+      <div class="well well-lg">cgminer --scrypt -o stratum+tcp://flamefeed.net:9327 -u YourLTCPayoutAddress -p x --expiry 1 --scan-time 1 --queue 0 --no-extranonce</div>
 
       <center>
         <div class='container'>
@@ -214,7 +204,7 @@
     (d.head || d.body).appendChild(s);
     })();
     </script>
-    
+
     <script type="text/javascript">
 
     $(document).ready(function() {
